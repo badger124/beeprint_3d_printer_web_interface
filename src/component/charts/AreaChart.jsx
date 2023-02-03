@@ -6,9 +6,6 @@ import { timeFormatDefaultLocale, timeFormat } from 'd3-time-format';
 import { last, first } from 'react-stockcharts/lib/utils';
 import { discontinuousTimeScaleProvider } from 'react-stockcharts/lib/scale';
 
-import { scaleTime } from 'd3-scale';
-import { curveMonotoneX } from 'd3-shape';
-
 import { ChartCanvas, Chart } from 'react-stockcharts';
 
 import {
@@ -236,7 +233,7 @@ class AreaChart extends React.Component {
       },
       singleTooltip: {
         xDisplayFormatPattern: '%H:%M:%S',
-        yDisplayFormatPattern: '.2f',
+        yDisplayFormatPattern: '.0f',
         origin: [10, 0],
         valueStroke: '#fff',
         // fontFamily: null,

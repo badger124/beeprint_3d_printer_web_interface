@@ -18,7 +18,7 @@ import SaveIcon from '@material-ui/icons/Save'
 import KeyboardArrowDownOutlined from '@material-ui/icons/KeyboardArrowDownOutlined'
 import { FormattedMessage } from 'react-intl'
 
-const drawerHeight = 45;
+const drawerHeight = 30;
 
 const styles = theme => ({
   root: {
@@ -48,7 +48,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing(3), // theme.spacing.unit * 3
   },
   dragger: {
     top: 16,

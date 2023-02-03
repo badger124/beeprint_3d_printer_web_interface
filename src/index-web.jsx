@@ -31,6 +31,8 @@ import { Fab, SwipeableDrawer } from '@material-ui/core'
 import ResponsiveDrawer from './component/overlay/ResponsiveDrawer'
 import Tooltip from '@material-ui/core/Tooltip'
 
+// import registerServiceWorker from './utils/serviceWorker/registerServiceWorker';
+
 if (!Intl.PluralRules) {
   require('@formatjs/intl-pluralrules/polyfill');
   require('@formatjs/intl-pluralrules/locale-data/en'); // Add locale data for de
@@ -212,3 +214,5 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+// registerServiceWorker();

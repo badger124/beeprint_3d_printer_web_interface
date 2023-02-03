@@ -14,19 +14,11 @@ import CardHeader from '../../../component/card/CardHeader';
 import CardIcon from '../../../component/card/CardIcon';
 import CardFooter from '../../../component/card/CardFooter';
 import Button from '../../../component/customButtons/Button';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import { DateRange, Pause, PlayArrow, Stop } from '@material-ui/icons'
-import Icon from '@material-ui/core/Icon';
-import SentimentVerySatisfied from "@material-ui/icons/SentimentVerySatisfied";
-import SentimentVeryDissatisfied from "@material-ui/icons/SentimentVeryDissatisfied";
-import SentimentDissatisfied from "@material-ui/icons/SentimentDissatisfied";
-import SentimentSatisfied from "@material-ui/icons/SentimentSatisfied";
 import Print from '@material-ui/icons/Print'
-import { styled } from '@material-ui/core/styles';
 
 import LinearProgress from '@material-ui/core/LinearProgress';
 import CardBody from '../../../component/card/CardBody'
-import IconButton from '@material-ui/core/IconButton'
 import { printPause, printResumeStart, printStop } from '../../../redux/additions/commands'
 
 const BorderLinearProgress = withStyles((theme) => ({
@@ -46,6 +38,10 @@ const BorderLinearProgress = withStyles((theme) => ({
 class InformativeRealtimeBox extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      remainingSeconds: null
+    }
   }
 
   componentDidMount () {
@@ -54,6 +50,40 @@ class InformativeRealtimeBox extends React.Component {
 
   componentWillUnmount () {
     this.props.unsubscription();
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (
+      this.props.percentageProgress !== 0 &&
+      prevProps.percentageProgress != null && prevProps.percentageProgress != undefined &&
+      this.props.percentageProgress != null && this.props.percentageProgress != undefined &&
+      prevProps.progressTime != null && prevProps.progressTime != undefined &&
+      (prevProps.progressTime.seconds != this.props.progressTime.seconds ||
+        prevProps.progressTime.minutes != this.props.progressTime.minutes ||
+      prevProps.progressTime.hours != this.props.progressTime.hours)
+      // && this.props.percentageProgress != prevProps.percentageProgress
+    ) {
+      let elapsedSeconds = this.props.progressTime.hours * 60 *60 + this.props.progressTime.minutes * 60 + this.props.progressTime.seconds;
+
+      // 100 : this.props.percentageProgress = x : elapsedSeconds
+
+      let remainingSeconds = (100 * elapsedSeconds / this.props.percentageProgress)-elapsedSeconds;
+      if (remainingSeconds<0) remainingSeconds = 0;
+      remainingSeconds = Math.round(remainingSeconds);
+
+      if (this.props.value === 'IDLE' && this.props.percentageProgress === 99){
+        this.setState({ remainingSeconds: 0 });
+      } else {
+        this.setState({ remainingSeconds: remainingSeconds });
+      }
+    }
+    // if (
+    //   prevProps.value==='PRINTING' &&
+    //   this.props.value!=='IDLE' &&
+    //   this.props.value!=='PAUSE' &&
+    //   this.props.value!=='PRINTING'
+    // ) {
+    //   this.setState({ remainingSeconds: 0 });
+    // }
   }
 
   handleHome = () => {
@@ -84,7 +114,7 @@ class InformativeRealtimeBox extends React.Component {
 
   render() {
     const { classes, id } = this.props;
-    const {
+    let {
       value, dataType, lastUpdate, isInHome,
       percentageProgress,
       job,
@@ -96,6 +126,34 @@ class InformativeRealtimeBox extends React.Component {
     let resume = false;
     let pause = false;
     let stop = false;
+
+    let remainingTime = { minutes: ' - ', hours: ' - ', seconds: ' - ' }
+    if (percentageProgress < 0) percentageProgress = 0;
+    if (percentageProgress === 99 && value==='IDLE') {
+      percentageProgress = 100;
+    }
+
+    if (percentageProgress === 100){
+      remainingTime.hours='00';
+      remainingTime.minutes='00';
+      remainingTime.seconds='00';
+    }else if (this.state.remainingSeconds !== null && this.state.remainingSeconds !== undefined){
+
+      remainingTime.hours='';
+      remainingTime.minutes='';
+      remainingTime.seconds='';
+
+      remainingTime.hours = Math.trunc(this.state.remainingSeconds/60/60).toString().padStart(2, '0');
+
+      let remainingSecondsHours = Math.trunc(this.state.remainingSeconds/60/60)*60*60;
+
+      remainingTime.minutes = (Math.trunc((this.state.remainingSeconds-remainingSecondsHours)/60)).toString().padStart(2, '0');
+
+      let remainingSecondsMinuts = Math.trunc((this.state.remainingSeconds-remainingSecondsHours)/60)*60;
+
+      remainingTime.seconds = (this.state.remainingSeconds-(remainingSecondsHours+remainingSecondsMinuts)).toString().padStart(2, '0');
+    }
+    // (Math.round(this.state.remainingSeconds/60).toString().padStart(2, '0')||" -")+":"+((this.state.remainingSeconds-Math.round(this.state.remainingSeconds/60)*60).toString().padStart(2, '0')||" -")
 
     // 'IDLE',
     //   'PRINTING',
@@ -138,12 +196,12 @@ class InformativeRealtimeBox extends React.Component {
 
         </CardHeader>
         <CardBody>
-          <Box className="mb25" display="flex" alignItems="center" height="40px">
+          <Box className="mb25" display="flex" alignItems="center" height="30px">
             <Box width="100%" mr={1}>
-              <BorderLinearProgress variant="determinate" value={percentageProgress}  />
+              <BorderLinearProgress variant="determinate" value={(this.state.remainingSeconds===0 && percentageProgress===99)?100:percentageProgress}  />
             </Box>
             <Box minWidth={40}>
-              <Typography variant="body2" color="textSecondary">{`${percentageProgress}%`}</Typography>
+              <Typography variant="body2" color="textSecondary">{`${(this.state.remainingSeconds===0 && percentageProgress===99)?100:percentageProgress}%`}</Typography>
             </Box>
           </Box>
           <Box className="mb25" display="flex" alignItems="center" height="30px">
@@ -153,18 +211,25 @@ class InformativeRealtimeBox extends React.Component {
               />: {job || '-'}
             </Typography>;
           </Box>
-          <Box className="mb25" display="flex" alignItems="center" height="30px">
+          <Box className="mb25" display="flex" alignItems="center" height="28px">
             <Typography variant="subtitle1" component="div">
               <FormattedMessage
                 id="informative.realtime.status.label.size"
               />: {Math.round((jobSize || 0)/10000)/100}Kb
             </Typography>
           </Box>
-          <Box className="mb25" display="flex" alignItems="center" height="30px">
+          <Box className="mb25" display="flex" alignItems="center" height="28px">
             <Typography variant="subtitle1" component="div">
               <FormattedMessage
                 id="informative.realtime.status.label.elapsed_time"
               />: {progressTime.hours.toString().padStart(2, '0')}:{progressTime.minutes.toString().padStart(2, '0')}:{progressTime.seconds.toString().padStart(2, '0')}
+            </Typography>
+          </Box>
+          <Box className="mb25" display="flex" alignItems="center" height="28px">
+            <Typography variant="subtitle1" component="div">
+              <FormattedMessage
+                id="informative.realtime.status.label.remaining_time"
+              />: {remainingTime.hours+":"+remainingTime.minutes+":"+remainingTime.seconds}
             </Typography>
           </Box>
           <Box className="mb25" display="flex" alignItems="center" justifyContent='space-between'  height="40px">

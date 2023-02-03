@@ -9,9 +9,8 @@ import {
 } from '../redux/actions';
 import { selectors as printerStatsSelectors } from '../redux/reducers/printerStats';
 
-
 class PrinterStats extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -27,7 +26,7 @@ class PrinterStats extends React.Component {
         { i: 'informativeBoxBedTempContainerId', ...{ ...boxes.informativeBoxBedTempContainer } },
         { i: 'informativeBoxFanContainerId', ...{ ...boxes.informativeBoxFanContainer } },
         { i: 'informativeBoxStatusContainerId', ...{ ...boxes.informativeBoxStatusContainer } },
-        { i: 'chartBoxTemperaturesId', ...{ ...boxes.chartBoxTemperatures } },
+        { i: 'chartBoxTemperaturesId', ...{ ...boxes.chartBoxTemperatures } }
         // { i: 'informativeBoxDailyProductionContainerId', ...{ ...boxes.informativeBoxDailyProductionContainer } },
         // { i: 'chartBoxProductionPowerId', ...{ ...boxes.chartBoxProductionPower } }
         // { i: 'chartBoxProductionCurrentId', ...{ ...boxes.chartBoxProductionCurrent } },
@@ -43,11 +42,11 @@ class PrinterStats extends React.Component {
         //     },
         //   },
         // },
-      ],
+      ]
     };
   }
 
-  render() {
+  render () {
     const { layouts, saveLayouts } = this.props;
 
     return (
@@ -69,13 +68,13 @@ PrinterStats.propTypes = {
 
 PrinterStats.defaultProps = {
   layouts: {
-    lg: [], md: [], sm: [], xs: [], xxs: [],
+    lg: [], md: [], sm: [], xs: [], xxs: []
   },
   saveLayouts: () => console.log('Save layout')
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  layouts: printerStatsSelectors.layouts(state),
+  layouts: printerStatsSelectors.layouts(state)
 });
 
 const mapDispatchToProps = {

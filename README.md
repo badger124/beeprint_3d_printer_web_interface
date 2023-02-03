@@ -24,6 +24,7 @@ You can find It [here](https://github.com/xreef/MKS_WIFI_MISCHIANTI)
 - Upload to SPIFFS
 
 ### Changelog
+- 01/02/2023 1.6 Add Portuguese language (thanks Ronaldo Risso), remaining time and minor fix
 - 03/02/2022 1.5 Fix ru language, add control on filesize upload
 - 08/01/2022 1.4 Static IP configuration and mDNS (minor fix)
 - 02/01/2022 1.3 Polish language

@@ -107,7 +107,7 @@ const wsListenLogic = createLogic({
           messageJson.type = 'FILE_LIST';
           messageJson.end = true;
           messageJson.enabled = false;
-        } else if (fileListSelectors.fileStreamStarted(getState())) {
+        } else if (!e.data.startsWith('ok') && !e.data.startsWith('M27 ') && !e.data.startsWith('M992 ') && !e.data.startsWith('M994 ') && !e.data.startsWith('M997 ') && fileListSelectors.fileStreamStarted(getState())) {
           messageJson.type = 'FILE_LIST';
           messageJson.name = e.data;
         } else if (e.data.startsWith('WIFI:')) {

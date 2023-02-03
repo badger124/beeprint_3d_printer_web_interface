@@ -1,12 +1,12 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ROOT_DIRECTORY = path.join(__dirname);
 const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, '../public');
 
-const SRC_DIRECTORY = path.join(ROOT_DIRECTORY, '../src');
-const BUILD_DIRECTORY = path.join(ROOT_DIRECTORY, '../build');
+// const SRC_DIRECTORY = path.join(ROOT_DIRECTORY, '../src');
+// const BUILD_DIRECTORY = path.join(ROOT_DIRECTORY, '../build');
 
 const config = require('./webpack.config.js');
 const webpackConfig = merge(config, {

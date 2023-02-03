@@ -66,6 +66,7 @@
     "informative.realtime.status.label.file": "File",
     "informative.realtime.status.label.size": "Size",
     "informative.realtime.status.label.elapsed_time": "Elapsed time",
+    "informative.realtime.status.label.remaining_time": "Remaining time",
 
     "informative.realtime.video.title": "Video",
     "informative.realtime.video.subtitle": "Video stream of the printer",
@@ -209,6 +210,7 @@
     "informative.realtime.status.label.file": "Plik",
     "informative.realtime.status.label.size": "Rozmiar",
     "informative.realtime.status.label.elapsed_time": "Upływ czasu",
+    "informative.realtime.status.label.remaining_time": "Pozostały czasu",
 
     "informative.realtime.video.title": "Video",
     "informative.realtime.video.subtitle": "Strumieniowanie obrazu",
@@ -350,6 +352,7 @@
     "informative.realtime.status.label.file": "File",
     "informative.realtime.status.label.size": "Dimensione",
     "informative.realtime.status.label.elapsed_time": "Tempo trascorso",
+    "informative.realtime.status.label.remaining_time": "Tempo rimanente",
 
     "informative.realtime.T0Temp.title": "Estrusore 1",
     "informative.realtime.T1Temp.title": "Estrusore 2",
@@ -490,6 +493,7 @@
     "informative.realtime.status.label.file": "Файл",
     "informative.realtime.status.label.size": "Размер",
     "informative.realtime.status.label.elapsed_time": "Время от старта",
+    "informative.realtime.status.label.remaining_time": "Время от oставшееся",
 
     "informative.realtime.video.title": "Видео",
     "informative.realtime.video.subtitle": "Видеопоток принтера",
@@ -564,5 +568,149 @@
 
     "iframe.button.move": "Перетаскивать",
     "iframe.button.close": "Нажмите, чтобы закрыть"
+  },
+  "pt": {
+    "layouts.set": "O layout foi salvo no dispositivo",
+    "layouts.home.add": "Elemento adicionado na pagina inicial",
+    "layouts.home.remove": "Elemento removido da pagina inicial",
+
+    "menu.sidebar.home": "Inicio",
+    "menu.navbar.home": "Inicio",
+
+    "menu.sidebar.printerstats": "Temperatura e refrigeração",
+    "menu.navbar.printerstats": "Temperatura e refrigeração",
+
+    "menu.sidebar.movements": "Controles",
+    "menu.navbar.movements": "Controles",
+
+    "menu.sidebar.printing": "Imprimindo",
+    "menu.navbar.printing": "Imprimindo",
+
+    "menu.sidebar.stream": "Camera",
+    "menu.navbar.stream": "Camera",
+
+    "menu.sidebar.storage": "Armazenamento",
+    "menu.navbar.storage": "Armazenamento",
+
+    "menu.sidebar.daily": "Gráfico diário",
+    "menu.navbar.daily": "Gráfico diário",
+
+    "menu.sidebar.monthly": "Gráfico mensal",
+    "menu.navbar.monthly": "Gráfico mensal",
+
+    "menu.sidebar.configuration": "Configuração",
+    "menu.navbar.configuration": "Configuração",
+
+    "menu.sidebar.introduction": "Introdução",
+    "menu.navbar.introduction": "Introdução",
+
+    "date.label": "Dados",
+
+    "chart.no_data": "Sem dados",
+    "chart.no_production": "Sem dados",
+    "chart.loading": "Carregando...",
+
+    "chart.temperature.title": "Temperaturas",
+    "chart.temperature.subtitle": "Temperatura do Extrusor e Mesa",
+    "chart.temperature.T0.label": "Extrusor Primario",
+    "chart.temperature.T1.label": "Extrusor secundario",
+    "chart.temperature.B.label": "Mesa",
+
+    "chart.production.battery.title": "Bateria",
+
+    "informative.realtime.move.title": "Movimento da impressora",
+    "informative.realtime.T0Temp.title": "Extrusor 1",
+    "informative.realtime.T1Temp.title": "Extrusor 2",
+
+    "informative.realtime.fan.title": "Velocidade Ventoinha",
+    "informative.realtime.fan.button_set": "Sel. Vel. da Ventoinha",
+    "informative.realtime.fan.text": "Ultima Vel.",
+
+    "informative.temperature.T0Temp.title": "Extrusor 1",
+    "informative.temperature.T1Temp.title": "Extrusor 2",
+    "informative.realtime.bed.title": "Temp. Mesa",
+    "informative.realtime.status.title": "Estado da impressora",
+    "informative.realtime.status.button.resume": "Resumir",
+    "informative.realtime.status.button.pause": "Pausar",
+    "informative.realtime.status.button.stop": "Parar",
+    "informative.realtime.status.label.file": "Arquivo",
+    "informative.realtime.status.label.size": "Tamanho",
+    "informative.realtime.status.label.elapsed_time": "Decorrido",
+    "informative.realtime.status.label.remaining_time": "Restante",
+
+    "informative.realtime.video.title": "Camera",
+    "informative.realtime.video.subtitle": "Camera da impressora",
+
+    "last.update": "ult. atualização",
+
+    "upload.success": "Arquivo {filename} Enviado!",
+    "upload.failure": "Arquivo {filename} erro no envio! ({err})",
+
+    "box.file.upload.title": "Enviar",
+    "box.file.upload.choose_file": "Escolha o arquivo",
+    "box.file.upload.upload_and_print": "Enviar e imprimir",
+    "box.file.upload.upload": "Enviar",
+    "box.file.upload.dialog.text": "O arquivo já existe, continuar? Uma progressiva será adicionada no final do arquivo. E este arquivo sempre será usado.",
+    "box.file.upload.subtitle": "Adicionar arquivo ao SD/Pendrive",
+    "box.file.upload.fileNameTooLong": "Nome de arquivo muito longo, tamanho máximo de arquivo 36 caracteres {fileLength}",
+
+    "box.gcode.title": "Enviar GCode",
+    "box.gcode.subtitle": "Escreva no editor e envie",
+    "box.gcode.send": "Enviar",
+    "box.gcode.placeholder": "Insira seu GCode aqui",
+    "box.gcode.message.sended": "{numGcodeLine} comando GCode enviado!",
+
+    "table.file.list.title": "lista de arquivos",
+    "table.file.list.subtitle": "Todos os arquivos no cartão SD/Pendrive",
+
+    "configuration.preferences.title": "Opções",
+    "configuration.preferences.subtitle": "Opções genericas",
+    "configuration.preferences.update": "Atualizar preferencias",
+
+    "configuration.network.title": "Configurar rede",
+    "configuration.network.subtitle": "Lembre-se de definir um IP estático correto",
+
+    "configuration.network.staticIP.label": "Definir um IP estático",
+
+    "configuration.email.table.email":"EMail",
+    "configuration.email.notification.enabled.label": "Ativar notificação quando a impressora terminar o trabalho",
+
+    "configuration.network.update": "Atualizar configurações de rede",
+
+    "configuration.camera.title": "Camera Setup",
+    "configuration.camera.subtitle": "Usar um esp32-cam igual o tutorial",
+    "configuration.camera.streamingurl.label": "esp32-cam IP",
+    "configuration.camera.update": "Atualizar configuração da câmera",
+    "configuration.camera.rotation.label": "Rotação da camera",
+
+    "configuration.email.notification.title": "Configurações de notificação",
+    "configuration.email.notification.finishprintemail.label": "E-mail para notificação de impressão finalizada",
+    "configuration.email.notification.subtitle": "Configurar servidor SMTP primeiro",
+    "configuration.email.notification.add": "Novo e-mail de notificação",
+    "configuration.email.notification.add.modal.title":"Inserir Titulo",
+    "configuration.email.notification.add.modal.no_email":"Nada",
+    "configuration.email.notification.add.modal.first_alarm":"Primeiro alarme",
+    "configuration.email.notification.add.modal.all_state_change":"Em toda mudança de estado",
+
+    "configuration.save.success": "Configuração salva com sucesso",
+    "configuration.save.failed": "Falha ao salvar a configuração <br>{err}",
+
+    "configuration.smtpserver.title": "Servidor de configurações SMTP",
+    "configuration.smtpserver.subtitle": "Para receber notificações, você precisa configurar o servidor SMTP",
+    "configuration.smtpserver.update": "Atualizar dados do servidor SMTP",
+
+    "home.fab.tooltip": "Salve localmente os layouts atuais desta página",
+
+    "page.intro": "<div><h2>Introduction</h2><div>Para instalar este Web App, ative os recursos do Chrome <b> PWAs de área de trabalho</b></div><div>Copie este link e cole no seu navegador</div><div>chrome://flags/#enable-desktop-pwas</div></div>",
+
+    "websocket.open": "Impressora 3D conectada",
+    "websocket.close": "Impressora 3D desconectada",
+    "websocket.error": "Erro <br> Não conectada!",
+
+    "websocket.message.preheat.sended": "O comando de pré-aquecimento do {tool} na temperatura {preHeatTemp} foi enviado!",
+    "websocket.message.preheat.button": "Pre-Aquecer",
+
+    "iframe.button.move": "Arraste para mover",
+    "iframe.button.close": "Click para fechar"
   }
 }
