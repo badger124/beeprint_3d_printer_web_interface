@@ -24,12 +24,13 @@ You can find It [here](https://github.com/xreef/MKS_WIFI_MISCHIANTI)
 - Upload to SPIFFS
 
 ### Changelog
-- 01/02/2023 1.6 Add Portuguese language (thanks Ronaldo Risso), remaining time and minor fix
-- 03/02/2022 1.5 Fix ru language, add control on filesize upload
-- 08/01/2022 1.4 Static IP configuration and mDNS (minor fix)
-- 02/01/2022 1.3 Polish language
-- 30/12/2021 1.2 GCode sender
-- 14/12/2021 1.1 Add Camera rotation features
+- 07/02/2023 1.6.1 Minor fix on Portuguese language
+- 01/02/2023 1.6   Add Portuguese language (thanks Ronaldo Risso), remaining time and minor fix
+- 03/02/2022 1.5   Fix ru language, add control on filesize upload
+- 08/01/2022 1.4   Static IP configuration and mDNS (minor fix)
+- 02/01/2022 1.3   Polish language
+- 30/12/2021 1.2   GCode sender
+- 14/12/2021 1.1   Add Camera rotation features
 
 ### Limitations
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/it/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/it/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/it/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Italy License</a>.
