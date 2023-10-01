@@ -1,4 +1,148 @@
 {
+  "ko": {
+    "layouts.set": "페이지 레이아웃이 기기에 저장되었습니다",
+    "layouts.home.add": "홈 페이지에 항목이 추가되었습니다",
+    "layouts.home.remove": "홈 페이지에서 항목이 제거되었습니다",
+
+    "menu.sidebar.home": "홈",
+    "menu.navbar.home": "홈",
+
+    "menu.sidebar.printerstats": "핫엔드 및 팬",
+    "menu.navbar.printerstats": "핫엔드 및 팬",
+
+    "menu.sidebar.movements": "제어",
+    "menu.navbar.movements": "제어",
+
+    "menu.sidebar.printing": "출력",
+    "menu.navbar.printing": "출력",
+
+    "menu.sidebar.stream": "비디오",
+    "menu.navbar.stream": "비디오",
+
+    "menu.sidebar.storage": "저장공간",
+    "menu.navbar.storage": "저장공간",
+
+    "menu.sidebar.daily": "일일 차트",
+    "menu.navbar.daily": "일일 차트",
+
+    "menu.sidebar.monthly": "월간 차트",
+    "menu.navbar.monthly": "월간 차트",
+
+    "menu.sidebar.configuration": "설정",
+    "menu.navbar.configuration": "설정",
+
+    "menu.sidebar.introduction": "소개",
+    "menu.navbar.introduction": "소개",
+
+    "date.label": "날짜",
+
+    "chart.no_data": "데이터 없음",
+    "chart.no_production": "데이터 없음",
+    "chart.loading": "로드 중...",
+
+    "chart.temperature.title": "온도",
+    "chart.temperature.subtitle": "압출기 및 베드 온도",
+    "chart.temperature.T0.label": "압출기1",
+    "chart.temperature.T1.label": "압출기2",
+    "chart.temperature.B.label": "베드",
+
+    "chart.production.battery.title": "배터리",
+
+    "informative.realtime.move.title": "프린터 제어",
+    "informative.realtime.T0Temp.title": "압출기 1",
+    "informative.realtime.T1Temp.title": "압출기 2",
+
+    "informative.realtime.fan.title": "팬 속도",
+    "informative.realtime.fan.button_set": "팬 속도 설정",
+    "informative.realtime.fan.text": "최근 팬 속도",
+
+    "informative.temperature.T0Temp.title": "압출기 1",
+    "informative.temperature.T1Temp.title": "압출기 2",
+    "informative.realtime.bed.title": "베드 온도",
+    "informative.realtime.status.title": "프린터 상태",
+    "informative.realtime.status.button.resume": "계속",
+    "informative.realtime.status.button.pause": "일시 정지",
+    "informative.realtime.status.button.stop": "정지",
+    "informative.realtime.status.label.file": "파일",
+    "informative.realtime.status.label.size": "크기",
+    "informative.realtime.status.label.elapsed_time": "경과 시간",
+    "informative.realtime.status.label.remaining_time": "남은 시간",
+
+    "informative.realtime.video.title": "비디오",
+    "informative.realtime.video.subtitle": "프린터 비디오 스트리밍",
+
+    "last.update": "최근 업데이트",
+
+    "upload.success": "파일 {filename}이(가) 업로드되었습니다!",
+    "upload.failure": "파일 {filename} 업로드 오류! ({err})",
+
+    "box.file.upload.title": "파일 업로드",
+    "box.file.upload.choose_file": "파일 선택",
+    "box.file.upload.upload_and_print": "업로드 및 출력",
+    "box.file.upload.upload": "업로드",
+    "box.file.upload.dialog.text": "파일이 이미 존재합니다. 계속하시겠습니까? 파일 끝에는 점진적으로 추가됩니다. 이 파일은 항상 사용됩니다.",
+    "box.file.upload.subtitle": "3D 프린터 SD 카드에 파일 추가",
+    "box.file.upload.fileNameTooLong": "파일 이름이 너무 깁니다. 최대 파일 크기는 36자입니다 (현재 파일 크기 {fileLength})",
+
+    "box.gcode.title": "GCode 뷰어",
+    "box.gcode.subtitle": "뷰어에 작성하고 전송",
+    "box.gcode.send": "전송",
+    "box.gcode.placeholder": "여기에 GCode를 입력하세요",
+    "box.gcode.message.sended": "{numGcodeLine} GCode 명령이 전송되었습니다!",
+
+    "table.file.list.title": "파일 목록",
+    "table.file.list.subtitle": "SD 카드 내 모든 파일",
+
+    "configuration.preferences.title": "설정",
+    "configuration.preferences.subtitle": "일반 설정",
+    "configuration.preferences.update": "설정 업데이트",
+
+    "configuration.network.title": "네트워크 설정",
+    "configuration.network.subtitle": "IP를 올바르게 설정하세요",
+
+    "configuration.network.staticIP.label": "고정 IP 선택",
+
+    "configuration.email.table.email":"이메일",
+    "configuration.email.notification.enabled.label": "프린터 작업 완료 시 알림 활성화",
+
+    "configuration.network.update": "네트워크 설정 업데이트",
+
+    "configuration.camera.title": "카메라 설정",
+    "configuration.camera.subtitle": "실시간으로 esp32캠을 사용해보세요",
+    "configuration.camera.streamingurl.label": "esp32캠 IP",
+    "configuration.camera.update": "카메라 설정 업데이트",
+    "configuration.camera.rotation.label": "카메라 회전",
+
+   "configuration.email.notification.title": "알림 설정",
+    "configuration.email.notification.finishprintemail.label": "인쇄 완료 알림용 이메일",
+    "configuration.email.notification.subtitle": "먼저 SMTP 서버를 구성하세요",
+    "configuration.email.notification.add": "새로운 알림 이메일",
+    "configuration.email.notification.add.modal.title":"삽입",
+    "configuration.email.notification.add.modal.no_email":"없음",
+    "configuration.email.notification.add.modal.first_alarm":"첫 번째 알림",
+    "configuration.email.notification.add.modal.all_state_change":"모든 상태 변경 시",
+
+    "configuration.save.success": "설정이 성공적으로 저장되었습니다",
+    "configuration.save.failed": "설정 저장 실패 <br>{err}",
+
+    "configuration.smtpserver.title": "SMTP 서버 설정",
+    "configuration.smtpserver.subtitle": "알림을 받으려면 SMTP 서버를 구성해야 합니다",
+    "configuration.smtpserver.update": "SMTP 서버 데이터 업데이트",
+
+    "home.fab.tooltip": "현재 페이지의 레이아웃을 로컬로 저장합니다",
+
+    "page.intro": "<div><h2>소개</h2><div>이 웹 앱을 설치하려면 Chrome 기능 <b>데스크톱 PWA</b>를 활성화하세요</div><div>이 링크를 복사하여 브라우저에 붙여넣으세요</div><div>chrome://flags/#enable-desktop-pwas</div></div>",
+
+    "websocket.open": "3D 프린터 연결됨",
+    "websocket.close": "3D 프린터 연결 해제됨",
+    "websocket.error": "오류 <br>연결되지 않음!",
+
+    "websocket.message.preheat.sended": "{tool} 도구에 대한 예열 명령이 {preHeatTemp}에 전송되었습니다!",
+    "websocket.message.preheat.button": "예열",
+
+    "iframe.button.move": "드래그하여 이동",
+    "iframe.button.close": "닫으려면 클릭하세요"
+  },
   "en": {
     "layouts.set": "Layouts of the page are saved on device",
     "layouts.home.add": "Element added to home page",
